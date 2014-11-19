@@ -1,0 +1,29 @@
+{
+  "name": "black-scholes",
+  "version": "1.0.0",
+  "description": "Option pricing using the Black-Scholes formula.",
+  "main": "black-scholes.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MattL922/black-scholes.git"
+  },
+  "keywords": [
+    "black-scholes",
+    "black",
+    "scholes",
+    "options",
+    "pricing"
+  ],
+  "author": "Matt Loppatto <mattloppatto@gmail.com> (https://github.com/MattL922)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MattL922/black-scholes/issues"
+  },
+  "homepage": "https://github.com/MattL922/black-scholes",
+  "devDependencies": {
+    "mocha": "2.0.1"
+  }
+}
