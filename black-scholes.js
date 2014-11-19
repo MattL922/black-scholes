@@ -45,7 +45,6 @@ function _doubleFactorial(n)
  * Black-Scholes option pricing formula.
  * See {@link http://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model#Black-Scholes_formula|Wikipedia page}
  * for pricing puts in addition to calls.
- * @todo Implement put pricing
  *
  * @param   {Number} s       Current price of the underlying
  * @param   {Number} k       Strike price
