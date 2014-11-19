@@ -15,6 +15,6 @@ Usage:
 ```
 var bs = require("black-scholes");
 
-console.log(bs.blackScholes(30, 34, .25, .2, .08, "call")); // 0.23834902311961947
-console.log(bs.blackScholes(30, 34, .25, .2, .08, "put")); // 3.5651039155492974
+bs.blackScholes(30, 34, .25, .2, .08, "call"); // 0.23834902311961947
+bs.blackScholes(30, 34, .25, .2, .08, "put"); // 3.5651039155492974
 ```
