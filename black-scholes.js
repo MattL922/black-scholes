@@ -34,7 +34,7 @@ function _stdNormCDF(x)
 function _doubleFactorial(n)
 {
   var val = 1;
-  for(var i = n; i >= 1; i-=2)
+  for(var i = n; i > 1; i-=2)
   {
     val *= i;
   }
