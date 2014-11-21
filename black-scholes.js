@@ -14,14 +14,14 @@
  */
 function _stdNormCDF(x)
 {
-  var temp = 0;
+  var probability = 0;
   for(var i = 0; i < 100; i++)
   {
-    temp += (Math.pow(x, 2*i+1)/_doubleFactorial(2*i+1));
+    probability += (Math.pow(x, 2*i+1)/_doubleFactorial(2*i+1));
   }
-  temp *= Math.pow(Math.E, -0.5*Math.pow(x, 2));
-  temp /= Math.sqrt(2*Math.PI);
-  return temp + 0.5;
+  probability *= Math.pow(Math.E, -0.5*Math.pow(x, 2));
+  probability /= Math.sqrt(2*Math.PI);
+  return probability + 0.5;
 }
 
 /**
