@@ -1,6 +1,6 @@
 {
   "name": "black-scholes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Option pricing using the Black-Scholes formula.",
   "main": "black-scholes.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "black-scholes",
     "black",
     "scholes",
-    "options",
+    "option",
     "pricing"
   ],
   "author": "Matt Loppatto <mattloppatto@gmail.com> (https://github.com/MattL922)",
