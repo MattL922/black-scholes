@@ -15,13 +15,27 @@
 function _stdNormCDF(x)
 {
   var probability = 0;
-  for(var i = 0; i < 100; i++)
+  // avoid divergence in the series which happens around +/-8 when summing the
+  // first 100 terms
+  if(x >= 8)
   {
-    probability += (Math.pow(x, 2*i+1)/_doubleFactorial(2*i+1));
+    probability = 1;
   }
-  probability *= Math.pow(Math.E, -0.5*Math.pow(x, 2));
-  probability /= Math.sqrt(2*Math.PI);
-  return probability + 0.5;
+  else if(x <= -8)
+  {
+    probability = 0;
+  }
+  else
+  {
+    for(var i = 0; i < 100; i++)
+    {
+      probability += (Math.pow(x, 2*i+1)/_doubleFactorial(2*i+1));
+    }
+    probability *= Math.pow(Math.E, -0.5*Math.pow(x, 2));
+    probability /= Math.sqrt(2*Math.PI);
+    probability += 0.5;
+  }
+  return probability;
 }
 
 /**
