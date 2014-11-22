@@ -1,6 +1,6 @@
 {
   "name": "black-scholes",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Option pricing using the Black-Scholes formula.",
   "main": "black-scholes.js",
   "scripts": {
