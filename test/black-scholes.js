@@ -47,6 +47,10 @@ describe("Black-Scholes", function()
       assert.equal(0, bs.blackScholes(35, 34, 0, 0, .08, "put"));
     });
   });
+  // It may seem odd that the call is worth significantly more than the put when
+  // they are both $2 in the money.  This is because the call theoretically has
+  // unlimited profit potential.  The put can only make money until the underlying
+  // goes to zero.  Therefore the call has more value.
   describe("t>0, v=0, in-the-money", function()
   {
     it("should return a call price of 2.673245107570324", function()
