@@ -2,6 +2,7 @@
  * Black-Scholes option pricing formula and supporting statistical functions.
  * @module black-scholes
  * @author Matt Loppatto <mattloppatto@gmail.com>
+ * @copyright 2014 Matt Loppatto
  */
 
 /**
