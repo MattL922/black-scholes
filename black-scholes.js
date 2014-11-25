@@ -75,11 +75,11 @@ function blackScholes(s, k, t, v, r, callPut)
   var w = (r * t + Math.pow(v, 2) * t / 2 - Math.log(k / s)) / (v * Math.sqrt(t));
   if(callPut === "call")
   {
-    price = s * _stdNormCDF(w) - k * Math.pow(Math.E, -1 * r * t) * _stdNormCDF(w - v * Math.sqrt(t));
+    price = s * stdNormCDF(w) - k * Math.pow(Math.E, -1 * r * t) * stdNormCDF(w - v * Math.sqrt(t));
   }
   else // put
   {
-    price = k * Math.pow(Math.E, -1 * r * t) * _stdNormCDF(v * Math.sqrt(t) - w) - s * _stdNormCDF(-w);
+    price = k * Math.pow(Math.E, -1 * r * t) * stdNormCDF(v * Math.sqrt(t) - w) - s * stdNormCDF(-w);
   }
   return price;
 }
