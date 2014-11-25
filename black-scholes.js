@@ -9,12 +9,11 @@
  * Standard normal cumulative distribution function.  The probability is estimated
  * by expanding the CDF into a series using the first 100 terms.
  * See {@link http://en.wikipedia.org/wiki/Normal_distribution#Cumulative_distribution_function|Wikipedia page}.
- * @private
  *
  * @param {Number} x The upper bound to integrate over.  This is P{Z <= x} where Z is a standard normal random variable.
  * @returns {Number} The probability that a standard normal random variable will be less than or equal to x
  */
-function _stdNormCDF(x)
+function stdNormCDF(x)
 {
   var probability = 0;
   // avoid divergence in the series which happens around +/-8 when summing the
@@ -85,6 +84,24 @@ function blackScholes(s, k, t, v, r, callPut)
   return price;
 }
 
+/**
+ * Calcuate omega as defined in the Black-Scholes formula.
+ *
+ * @param   {Number} s Current price of the underlying
+ * @param   {Number} k Strike price
+ * @param   {Number} t Time to experiation in years
+ * @param   {Number} v Volatility as a decimal
+ * @param   {Number} r Anual risk-free interest rate as a decimal
+ * @returns {Number} The value of omega
+ */
+function getW(s, k, t, v, r)
+{
+  var w = (r * t + Math.pow(v, 2) * t / 2 - Math.log(k / s)) / (v * Math.sqrt(t));
+  return w;
+}
+
 module.exports = {
   blackScholes: blackScholes,
+  stdNormCDF: stdNormCDF,
+  getW: getW
 };
