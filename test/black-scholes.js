@@ -84,4 +84,19 @@ describe("Black-Scholes", function()
       assert.equal(2, bs.blackScholes(32, 34, 0, 0, .08, "put"));
     });
   });
+  describe("Standard Normal Cumulative Distribution Function", function()
+  {
+    it("should return 0.5", function()
+    {
+      assert.equal(bs.stdNormCDF(0), .5);
+    });
+    it("should return 1", function()
+    {
+      assert.equal(bs.stdNormCDF(Infinity), 1);
+    });
+    it("should return 0", function()
+    {
+      assert.equal(bs.stdNormCDF(-Infinity), 0);
+    });
+  });
 });
