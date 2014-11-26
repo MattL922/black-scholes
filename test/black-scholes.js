@@ -111,4 +111,11 @@ describe("Black-Scholes", function()
       assert.equal(bs.stdNormCDF(3) - bs.stdNormCDF(-3), 0.99730020393674);
     });
   });
+  describe("getW", function()
+  {
+    it("should return -1.00163142954006", function()
+    {
+      assert.equal(bs.getW(30, 34, .25, .2, .08), -1.00163142954006);
+    });
+  });
 });
