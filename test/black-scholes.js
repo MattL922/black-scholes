@@ -98,5 +98,17 @@ describe("Black-Scholes", function()
     {
       assert.equal(bs.stdNormCDF(-Infinity), 0);
     });
+    it("should return 1 standard deviation", function()
+    {
+      assert.equal(bs.stdNormCDF(1) - bs.stdNormCDF(-1), 0.6826894921370861);
+    });
+    it("should return 2 standard deviations", function()
+    {
+      assert.equal(bs.stdNormCDF(2) - bs.stdNormCDF(-2), 0.9544997361036414);
+    });
+    it("should return 3 standard deviations", function()
+    {
+      assert.equal(bs.stdNormCDF(3) - bs.stdNormCDF(-3), 0.99730020393674);
+    });
   });
 });
