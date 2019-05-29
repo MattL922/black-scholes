@@ -5,6 +5,8 @@
  * @copyright 2014 Matt Loppatto
  */
 
+const sqrt2PI = Math.sqrt(2 * Math.PI);
+
 /**
  * Standard normal cumulative distribution function.  The probability is estimated
  * by expanding the CDF into a series using the first 100 terms.
@@ -30,8 +32,8 @@ function stdNormCDF(x)
 		n *= xx;
 		d *= i;
 	}
-	probability *= Math.pow(Math.E, -0.5*Math.pow(x, 2));
-	probability /= Math.sqrt(2*Math.PI);
+	probability *= Math.exp(-0.5*xx);
+	probability /= sqrt2PI;
 	probability += 0.5;
 	return probability;
 }
