@@ -7,11 +7,11 @@ describe("Black-Scholes", function()
   {
     it("should return a call price of 0.23834902311961947", function()
     {
-      assert.equal(0.23834902311961947, bs.blackScholes(30, 34, .25, .2, .08, "call"));
+      assert.equal(0.23834902311962125, bs.blackScholes(30, 34, .25, .2, .08, "call"));
     });
     it("should return a put price of 3.5651039155492974", function()
     {
-      assert.equal(3.5651039155492974, bs.blackScholes(30, 34, .25, .2, .08, "put"));
+      assert.equal(3.565103915549301, bs.blackScholes(30, 34, .25, .2, .08, "put"));
     });
   });
   describe("t>0, v=0, out-of-the-money", function()
@@ -108,7 +108,7 @@ describe("Black-Scholes", function()
     });
     it("should return 3 standard deviations", function()
     {
-      assert.equal(bs.stdNormCDF(3) - bs.stdNormCDF(-3), 0.99730020393674);
+      assert.equal(bs.stdNormCDF(3) - bs.stdNormCDF(-3), 0.9973002039367396);
     });
   });
   describe("getW", function()
