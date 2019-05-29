@@ -15,45 +15,25 @@
  */
 function stdNormCDF(x)
 {
-  var probability = 0;
   // avoid divergence in the series which happens around +/-8 when summing the
   // first 100 terms
-  if(x >= 8)
-  {
-    probability = 1;
-  }
-  else if(x <= -8)
-  {
-    probability = 0;
-  }
-  else
-  {
-    for(var i = 0; i < 100; i++)
-    {
-      probability += (Math.pow(x, 2*i+1)/_doubleFactorial(2*i+1));
-    }
-    probability *= Math.pow(Math.E, -0.5*Math.pow(x, 2));
-    probability /= Math.sqrt(2*Math.PI);
-    probability += 0.5;
-  }
-  return probability;
-}
-
-/**
- * Double factorial.  See {@link http://en.wikipedia.org/wiki/Double_factorial|Wikipedia page}.
- * @private
- *
- * @param {Number} n The number to calculate the double factorial of
- * @returns {Number} The double factorial of n
- */
-function _doubleFactorial(n)
-{
-  var val = 1;
-  for(var i = n; i > 1; i-=2)
-  {
-    val *= i;
-  }
-  return val;
+	if (x >= 8) return 1;
+	if (x <= -8) return 0;
+	let xx = x * x;
+	let probability = 0;
+	let n = x;
+	let d = 1;
+	for (let i = 3; i <= 199; i += 2) {
+		let prev = probability;
+		probability += n / d;
+		if (prev === probability) break;
+		n *= xx;
+		d *= i;
+	}
+	probability *= Math.pow(Math.E, -0.5*Math.pow(x, 2));
+	probability /= Math.sqrt(2*Math.PI);
+	probability += 0.5;
+	return probability;
 }
 
 /**
